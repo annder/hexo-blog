@@ -1,8 +1,8 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
-cache: npm
+  - 12.13.0 # use nodejs v10 LTS
+cache: yarn
 branches:
   only:
     - master # build master branch only
