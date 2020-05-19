@@ -1,29 +1,17 @@
 sudo: false
 language: node_js
 node_js:
-  - 12.13.0 # use nodejs v10 LTS
-cache: yarn
+  - 10 # use nodejs v10 LTS
+cache: npm
 branches:
   only:
     - master # build master branch only
 script:
-  - hexo clean
   - hexo generate # generate static files
-before_install:
-  - git config --global user.name "annter"
-  - git config --global user.email "15623317087@163.com"
-  - npm install -g hexo-cli
-
-after_success:
-  - git init
-  - git add .
-  - git commit -m "Travis CI Auto Builder"
-  - git push --force --quiet "https://$hexo@github.com/annder/hexo-blog/tree/master" master:master
-
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $hexo
+  github-token: $GH_TOKEN
   keep-history: true
   on:
     branch: master
