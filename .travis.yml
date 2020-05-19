@@ -7,7 +7,13 @@ branches:
   only:
     - master # build master branch only
 script:
+  - hexo clean
   - hexo generate # generate static files
+before_install:
+  - git config --global user.name "annter"
+  - git config --global user.email "15623317087@163.com"
+  - npm install -g hexo-cli
+
 deploy:
   provider: pages
   skip-cleanup: true
