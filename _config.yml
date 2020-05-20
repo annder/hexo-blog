@@ -98,6 +98,4 @@ theme: hexo-theme-icalm
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repository: https://github.com/annder/hexo-blog
-  branch: master
+  type:
